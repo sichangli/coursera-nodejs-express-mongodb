@@ -15,7 +15,7 @@ promoRouter
   })
   .get(cors.cors, (req, res, next) => {
     promoDb
-      .find({})
+      .find(req.query)
       .then(
         promotions => {
           res.statusCode = 200;
